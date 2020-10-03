@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  mirakurun:
+    build: .
+    image: aoirint/mirakurun:latest
+    restart: always
+    cap_add:
+      - SYS_ADMIN
+      - SYS_NICE
+    environment:
+      TZ: Asia/Tokyo
+      #LOG_LEVEL: '3'
+      #DEBUG: 'true'
+    ports:
+      - '40772:40772'
+      - '9229:9229'
+    devices:
+      - /dev/bus:/dev/bus
+      - /dev/dvb:/dev/dvb
+    volumes:
+      - './work:/work'
+      - '/etc/localtime:/etc/localtime:ro'
+      - './env/run:/var/run'
+      - './env/opt:/opt'
+      - './env/data:/app-data'
+      - './config:/app-config'
+    logging:
+      driver: json-file
+      options:
+        max-file: '1'
+        max-size: 10m
+
