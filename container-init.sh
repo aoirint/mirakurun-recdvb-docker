@@ -19,7 +19,7 @@ fi
 # <---
 
 echo "Start test recording"
-recdvb --b25 --strip 27 5 /work/test.m2ts
+recdvb --b25 --strip --sid hd 27 5 /work/test.m2ts
 # TODO: check if error in m2ts
 echo "$?"
 echo "Finished test recording"

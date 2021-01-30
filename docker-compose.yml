@@ -18,6 +18,7 @@ services:
       - /dev/bus:/dev/bus
       - /dev/dvb:/dev/dvb
     volumes:
+      - /dev/shm:/dev/shm
       - './work:/work'
       - '/etc/localtime:/etc/localtime:ro'
       - './env/run:/var/run'
