@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm -f /run/pcscd/pcscd.comm >/dev/null 2>&1
+
 # --->
 # Start pcscd
 # https://github.com/Chinachu/Mirakurun/blob/00cd8f6d830d33a556b192e3a51506c73c0b42b8/docker/container-init.sh
