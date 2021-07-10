@@ -31,16 +31,3 @@ services:
         max-file: '1'
         max-size: 10m
 
-  chinachu:
-    image: aoirint/chinachu
-    user: '1000:1000'
-    ports:
-      - '20772:20772'
-    volumes:
-      - '/etc/localtime:/etc/localtime:ro'
-      - ./chinachu/conf/config.json:/usr/local/chinachu/config.json
-      - ./chinachu/conf/rules.json:/usr/local/chinachu/rules.json
-      - ./chinachu/data:/usr/local/chinachu/data
-      - "${RECORDED_DIR}:/usr/local/chinachu/recorded"
-    depends_on:
-      - mirakurun
