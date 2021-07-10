@@ -1,0 +1,13 @@
+[Unit]
+Description=Mirakurun Docker Compose
+
+[Service]
+Type=simple
+Restart=always
+WorkingDirectory=/opt/mirakurun
+ExecStart=/usr/local/bin/docker-compose up
+ExecStopPost=/usr/local/bin/docker-compose down
+
+[Install]
+WantedBy=multi-user.target
+

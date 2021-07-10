@@ -15,3 +15,9 @@ npmの[arib-b25-stream-test](https://www.npmjs.com/package/arib-b25-stream-test)
 workディレクトリはコンテナ起動時に短いテスト録画を行った結果が格納される（マウント不要）。
 何かしらの形でDVBデバイスが不安定なのを検出するものを入れたい。
 
+systemd serviceファイルは/opt/mirakurunにこのリポジトリをcloneする想定になっている。
+dockerのrestart機能を使わないのは、再起動時やエラー発生時にコンテナを破棄するため。
+コンテナ作成時にホスト側の/devにデバイスが存在しないときの、破棄を伴わないコンテナ再起動の挙動に不安がある。
+
+ハードウェア操作時にブロックしてゾンビプロセスが発生、docker-composeから制御不能になることがあり、原因調査中。
+
