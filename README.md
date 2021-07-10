@@ -21,3 +21,9 @@ dockerのrestart機能を使わないのは、再起動時やエラー発生時�
 
 ハードウェア操作時にブロックしてゾンビプロセスが発生、docker-composeから制御不能になることがあり、原因調査中。
 
+.envファイルを作成する必要がある。
+
+```
+RECORDED_DIR=YOUR_RECORDED_DIR_PATH
+```
+
